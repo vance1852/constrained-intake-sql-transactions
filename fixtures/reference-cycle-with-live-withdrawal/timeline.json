@@ -1,0 +1,142 @@
+[
+  {
+    "pos": 1,
+    "kind": "submit",
+    "batch": "b4",
+    "groups": [
+      {
+        "group": "g1",
+        "submission": "g1/1",
+        "institution": "ns",
+        "requires": [
+          "g2"
+        ],
+        "rows": [
+          [
+            "check",
+            "c1",
+            "p2",
+            "ns"
+          ],
+          [
+            "proof",
+            "p1",
+            "ns",
+            1,
+            20,
+            40,
+            "apply"
+          ],
+          [
+            "course",
+            "k1",
+            "ns"
+          ]
+        ]
+      },
+      {
+        "group": "g2",
+        "submission": "g2/1",
+        "institution": "ns",
+        "requires": [
+          "g1",
+          "live:ext"
+        ],
+        "rows": [
+          [
+            "check",
+            "c2",
+            "p1",
+            "ns"
+          ],
+          [
+            "proof",
+            "p2",
+            "ns",
+            1,
+            21,
+            42,
+            "apply"
+          ],
+          [
+            "course",
+            "k1",
+            "ns"
+          ]
+        ]
+      },
+      {
+        "group": "g3",
+        "submission": "g3/1",
+        "institution": "west",
+        "requires": [],
+        "rows": [
+          [
+            "course",
+            "k3",
+            "west"
+          ],
+          [
+            "proof",
+            "p3",
+            "west",
+            1,
+            22,
+            44,
+            "apply"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "pos": 2,
+    "kind": "validate",
+    "batch": "b4"
+  },
+  {
+    "pos": 3,
+    "kind": "withdraw_live",
+    "proof_id": "ext",
+    "institution": "ns"
+  },
+  {
+    "pos": 4,
+    "kind": "commit",
+    "batch": "b4"
+  },
+  {
+    "pos": 5,
+    "kind": "restart",
+    "service": "intake"
+  },
+  {
+    "pos": 6,
+    "kind": "retry",
+    "batch": "b4",
+    "submissions": [
+      "g1/1",
+      "g2/1",
+      "g3/1"
+    ]
+  },
+  {
+    "pos": 7,
+    "kind": "insert_live",
+    "record": [
+      "later",
+      "p3",
+      "west"
+    ]
+  },
+  {
+    "pos": 8,
+    "kind": "retract",
+    "batch": "b4",
+    "groups": [
+      "g1",
+      "g2",
+      "g3"
+    ]
+  }
+]

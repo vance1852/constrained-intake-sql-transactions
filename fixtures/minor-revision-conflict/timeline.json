@@ -1,0 +1,26 @@
+[
+  {
+    "pos": 1,
+    "kind": "replace",
+    "proof": "p0",
+    "revision": 2,
+    "validity": [
+      15,
+      31
+    ],
+    "institution": "east",
+    "submission": "p0/2"
+  },
+  {
+    "pos": 2,
+    "kind": "retry",
+    "proof": "p0",
+    "revision": 2,
+    "validity": [
+      13,
+      31
+    ],
+    "institution": "east",
+    "submission": "p0/2"
+  }
+]

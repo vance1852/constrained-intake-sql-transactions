@@ -1,0 +1,15 @@
+{
+  "databases": {
+    "main": {
+      "file": "main.sql",
+      "rows": {
+        "live_proofs": 2,
+        "live_checks": 0,
+        "supplies": 3
+      }
+    }
+  },
+  "events": 8,
+  "documents": [],
+  "settings": {}
+}

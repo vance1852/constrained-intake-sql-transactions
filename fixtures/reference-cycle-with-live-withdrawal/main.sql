@@ -1,0 +1,10 @@
+BEGIN TRANSACTION;
+CREATE TABLE "live_checks" (check_id TEXT PRIMARY KEY, proof_id TEXT, institution TEXT);
+CREATE TABLE "live_proofs" (proof_id TEXT PRIMARY KEY, institution TEXT, revision INTEGER, valid_from INTEGER, valid_to INTEGER, state TEXT);
+INSERT INTO "live_proofs" VALUES('ext','ns',1,10,50,'valid');
+INSERT INTO "live_proofs" VALUES('label','west',9,10,50,'valid');
+CREATE TABLE "supplies" (institution TEXT PRIMARY KEY, joint_scope TEXT);
+INSERT INTO "supplies" VALUES('ns','link-1');
+INSERT INTO "supplies" VALUES('ns-lab','link-1');
+INSERT INTO "supplies" VALUES('west','solo');
+COMMIT;
